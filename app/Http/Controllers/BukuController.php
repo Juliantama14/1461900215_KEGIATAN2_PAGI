@@ -15,7 +15,7 @@ class BukuController extends Controller
     public function index()
     {
         $buku = DB::table('buku')->get();
-        return view('buku.databuku');
+        return view('buku.databuku', compact('buku'));
     }
 
     /**

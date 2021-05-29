@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\Data;
 
-class AnggotaController extends Controller
+class PrController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,10 @@ class AnggotaController extends Controller
      */
     public function index()
     {
-        $anggota = DB::table('anggota')->get();
-        return view('anggota.dataanggota', compact('anggota'));
+        $anggota = DB::table('anggota')
+        ->where('anggota_jk', 'LIKE', "%P%")
+        ->get();
+        return view('jk.perempuan', compact('anggota'));
     }
 
     /**
@@ -26,7 +27,7 @@ class AnggotaController extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -46,7 +47,7 @@ class AnggotaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
         //
     }

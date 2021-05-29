@@ -21,4 +21,7 @@ Route::get('/peminjam', function () {
     return view('peminjam');
 });
 Route::get('/databuku', 'App\Http\Controllers\BukuController@index');
-Route::get('/dataanggota', 'App\Http\Controllers\BukuController@index');
+Route::get('/dataanggota', 'App\Http\Controllers\AnggotaController@index');
+Route::get('/peminjam', 'App\Http\Controllers\PeminjamController@index');
+Route::get('/jk', 'App\Http\Controllers\JkController@index');
+Route::get('/pr', 'App\Http\Controllers\PrController@index');

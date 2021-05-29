@@ -1,13 +1,10 @@
 @extends('layout/layout')
-@section('title','dataanggota')
+@section('title','perempuan')
 @section('container')
 <div class='container'>
-    <h1>Data Anggota</h1>
+    <h1>Anggota Perempuan</h1>
 </div>
 <div class='container'>
-    <h5>Cari berdasarkan jenis kelamin</h5>
-    <a href="/jk">laki laki</a>
-    <a href="/pr">perempuan</a>
     <table class="table">
         <thead class="table-primary">
             <tr>

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Data;
 
-class AnggotaController extends Controller
+class PeminjamController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,11 @@ class AnggotaController extends Controller
      */
     public function index()
     {
-        $anggota = DB::table('anggota')->get();
-        return view('anggota.dataanggota', compact('anggota'));
+        // $pinjam = DB::table('pinjam')->get();
+        $pinjam = DB::table('pinjam')
+        ->join('anggota', 'pinjam.pinjam_id', '=', 'anggota.anggota_id')
+        ->get();
+        return view('pinjam.peminjam', compact('pinjam'));
     }
 
     /**
@@ -26,7 +29,7 @@ class AnggotaController extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -46,7 +49,7 @@ class AnggotaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
         //
     }
